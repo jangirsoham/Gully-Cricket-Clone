@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Gully Cricket Score Board"
+version = "1.0.0"
+id = "artifacts/gully-cricket"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19309
+
+[services.development]
+run = "pnpm --filter @workspace/gully-cricket run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/gully-cricket", "run", "build" ]
+publicDir = "artifacts/gully-cricket/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19309"
+BASE_PATH = "/"
