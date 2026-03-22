@@ -1,0 +1,13 @@
+{
+  "name": "gully-cricket-score-board",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build --config vite.netlify.config.js",
+    "dev": "vite --config vite.netlify.config.js"
+  },
+  "devDependencies": {
+    "vite": "^5.4.14"
+  }
+}
